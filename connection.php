@@ -2,12 +2,8 @@
 
 $con = mysqli_connect("localhost","root","","habiba24");
 
-if($con){
-    echo 'connected';
-}
-else{
+if(!$con){
     echo 'not connected';
 }
-
 
 ?>

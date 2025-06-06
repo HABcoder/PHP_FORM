@@ -31,12 +31,27 @@
             <td><?php echo $recevdata['impovements'] ?></td>
             <td><?php echo $recevdata['comments'] ?></td>
             <td><a href="edit.php?id=<?php $recevdata['custid']?>" class="btn btn-primary">Edit</a></td>
-            <td><a href="" class="btn btn-danger">Remove</a> </td>
+            <td><a href="view.php?Delid=<?php $recevdata['custid']?>" class="btn btn-danger">Remove</a> </td>
 
 <?php 
            echo "</tr>";
 }  
+    } 
+    else{
+        echo "No records found";
     }
 ?> 
 
 </table>
+
+<?php 
+        $idget = $_GET['Delid'];
+        $delete = "DELETE FROM resturant WHERE custid = '$idget";
+        $query = mysqli_query($con,$delete);
+        if($query){
+            echo "<script>alert('Record Deleted'); window.location.href='view.php';</script>";
+        }
+
+    
+    
+?>

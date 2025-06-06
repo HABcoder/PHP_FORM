@@ -16,7 +16,7 @@ if(isset($_POST['ins'])){
     $queryexe = mysqli_query($con,$query);
 
     if($queryexe){
-        echo 'Data Inserted';
+        echo '<script>alert("Data Inserted"); window.location.href="view.php";</script>';
     }
     else{
         echo 'Data Not Inserted';
